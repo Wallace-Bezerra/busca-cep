@@ -1,0 +1,11 @@
+header {
+    background-color: $dark-100;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.logo {
+    cursor: pointer;
+}
