@@ -1,0 +1,49 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+.seta3 {
+    animation: seta1 1s cubic-bezier(0.24, 0.6, 0.36, 1) infinite alternate-reverse;
+}
+
+.seta1 {
+    animation: seta1 1s cubic-bezier(0.24, 0.6, 0.36, 1) infinite alternate-reverse;
+}
+
+.seta2 {
+    animation: seta1 1s cubic-bezier(0.24, 0.6, 0.36, 1) infinite alternate-reverse;
+}
+
+
+
+.seta4 {
+    animation: seta1 1s cubic-bezier(0.24, 0.6, 0.36, 1) infinite alternate-reverse;
+}
+
+@keyframes seta1 {
+    0% {
+        // stroke-width: 1;
+        stroke-dasharray: 100 1;
+        stroke: #FFD626;
+        fill: transparent;
+        transform: translateX(0px);
+    }
+
+    100% {
+        // stroke-width: 1;
+        // stroke: initial;
+        stroke-dasharray: 0 100;
+        stroke: #FFD626;
+        transform: translateX(10px);
+    }
+}

@@ -1,7 +1,9 @@
 @import "reset.scss";
 @import "variables.scss";
+@import "animations.scss";
 @import "header.scss";
 @import "main.scss";
+
 
 body {
     background: linear-gradient(141.33deg, $blue-200 33.85%, $blue-100 78.42%);
