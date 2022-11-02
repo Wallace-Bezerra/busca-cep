@@ -13,7 +13,13 @@ const inputMask = IMask(inputCep, {
 btnBuscar.addEventListener("click", (event) => {
     event.preventDefault();
     console.log(inputCep.value);
-    buscarCEP(inputCep.value);
+    if (inputCep.value !== "") {
+        buscarCEP(inputCep.value);
+    }
+    else {
+        // alert("Digite um cep!")
+        inputCep.setAttribute("placeholder", "DIGITE UM CEP!");
+    }
 
 })
 inputCep.addEventListener("keypress", (event) => {
@@ -25,10 +31,8 @@ inputCep.addEventListener("keypress", (event) => {
     }
     if (event.key === "Enter" && event.currentTarget.value === "") {
         event.preventDefault();
-        alert("Insira um cep valido!")
+        inputCep.setAttribute("placeholder", "DIGITE UM CEP!");
     }
-
-
 })
 function getTopo(json) {
     const cep = document.querySelector(".top p:first-child")
@@ -43,16 +47,23 @@ async function buscarCEP(cep) {
         console.log(response);
         const data = await response.json();
         if (data.erro) {
-            alert("CEP não existe!");
+            inputCep.value = "";
+            inputCep.setAttribute("placeholder", "CEP NÃO ENCONTRADO!");
+
+
         }
         else {
             exibirDados(data);
+            inputCep.setAttribute("placeholder", "00000-000");
+            inputCep.value = "";
+
         }
 
     }
     catch (error) {
         console.log(error);
-        alert(error);
+        inputCep.value = "";
+        inputCep.setAttribute("placeholder", "CEP NÃO ENCONTRADO!");
     }
 }
 
@@ -65,7 +76,8 @@ function exibirDados(json) {
     const endereco = json.cep
     const mapa = document.querySelector(".mapa a");
 
-    mapa.href = `https://www.google.com/maps/place/${endereco}`
+    mapa.href = `https://www.google.com/maps/search/${endereco}`
+
     const card = document.querySelector(".card")
 
     card.dataset.animation = "fadeIn";
