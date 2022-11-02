@@ -3,9 +3,32 @@ header {
     height: 80px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-left: 30px;
-}
 
-.logo {
-    cursor: pointer;
+    .logo {
+        cursor: pointer;
+    }
+
+    .redes {
+        display: flex;
+        gap: 30px;
+        margin-right: 40px;
+
+        a {
+            display: flex;
+            align-items: center;
+            transition: .6s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    @include responsive(400px) {
+        .logo {
+            width: 120px;
+        }
+    }
 }

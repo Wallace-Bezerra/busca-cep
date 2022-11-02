@@ -6,9 +6,9 @@ const btnBuscar = document.querySelector(".search");
 const inputs = document.querySelectorAll(".input-get input");
 
 const inputMask = IMask(inputCep, {
-    mask: '00000-000'
+    mask: '00000-000',
+    lazy: true
 })
-
 
 btnBuscar.addEventListener("click", (event) => {
     event.preventDefault();
@@ -17,7 +17,6 @@ btnBuscar.addEventListener("click", (event) => {
         buscarCEP(inputCep.value);
     }
     else {
-        // alert("Digite um cep!")
         inputCep.setAttribute("placeholder", "DIGITE UM CEP!");
     }
 
@@ -47,23 +46,20 @@ async function buscarCEP(cep) {
         console.log(response);
         const data = await response.json();
         if (data.erro) {
-            inputCep.value = "";
-            inputCep.setAttribute("placeholder", "CEP NÃO ENCONTRADO!");
-
-
+            clearInput();
+            inputCep.setAttribute("placeholder", "NÃO ACHAMOS!");
         }
         else {
             exibirDados(data);
+            clearInput();
             inputCep.setAttribute("placeholder", "00000-000");
-            inputCep.value = "";
-
         }
 
     }
     catch (error) {
         console.log(error);
-        inputCep.value = "";
-        inputCep.setAttribute("placeholder", "CEP NÃO ENCONTRADO!");
+        clearInput();
+        inputCep.setAttribute("placeholder", "NÃO ACHAMOS!");
     }
 }
 
@@ -85,4 +81,8 @@ function exibirDados(json) {
         behavior: 'smooth',
         block: 'center'
     })
+}
+
+function clearInput() {
+    inputMask.value = "";
 }
