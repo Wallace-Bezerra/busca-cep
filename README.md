@@ -2,7 +2,7 @@
 
 <p align="center">
 Esse é um projeto prático para consumir a API do ViaCep.
-Utilizei o Fetch com Async Await para pegar os dados em exibir na tela.
+Utilizei o Fetch com Async Await para pegar os dados e exibir na tela.
 </p>
 
 <p align="center">
@@ -41,7 +41,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 📱 Mobile
 
 <p align="center">
-  <img alt="rocketpay" src=".github/Mobile.gif"
+  <img alt="rocketpay" src=".github/mobile.gif"
   width="60%">
 </p>
 
