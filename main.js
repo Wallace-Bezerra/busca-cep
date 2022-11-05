@@ -1,13 +1,14 @@
 import './src/Sass/style.scss'
+import { animation } from './Js/animation';
 import IMask from 'imask';
 
+animation();
 const inputCep = document.querySelector(".input-cep");
 const btnBuscar = document.querySelector(".search");
 const inputs = document.querySelectorAll(".input-get input");
 
 const inputMask = IMask(inputCep, {
-    mask: '00000-000',
-    lazy: true
+    mask: '00000-000'
 })
 
 btnBuscar.addEventListener("click", (event) => {
@@ -85,3 +86,8 @@ function exibirDados(json) {
 function clearInput() {
     inputMask.value = "";
 }
+
+
+
+
+

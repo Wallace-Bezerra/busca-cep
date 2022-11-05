@@ -83,7 +83,7 @@
         }
     }
 
-    @include responsive(390px) {
+    @include responsive(430px) {
         .title {
             h1 {
                 font-size: 36px;
@@ -176,6 +176,10 @@
                         font-weight: 500;
                         padding: 10px 18px;
                         width: 100%;
+
+                        &:disabled {
+                            color: #000000;
+                        }
                     }
                 }
 
@@ -230,11 +234,14 @@
         .card {
             padding-bottom: 40px;
             width: initial;
+
             .top {
                 gap: 0px;
+
                 p {
-                    font-size: 20px;
+                    font-size: 18px;
                 }
+
                 svg {
                     position: relative;
                     top: 0px;
