@@ -66,7 +66,6 @@ async function buscarCEP(cep) {
 function exibirDados(json) {
     inputs.forEach((item) => {
         item.value = json[item.getAttribute("id")].toLocaleUpperCase();
-
     });
     getTopo(json);
     const endereco = json.cep
