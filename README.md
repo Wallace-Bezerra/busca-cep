@@ -42,7 +42,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 <p align="center">
   <img alt="rocketpay" src=".github/mobile.gif"
-  width="60%">
+  width="40%">
 </p>
 
 ---
